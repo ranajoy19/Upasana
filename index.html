@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will you be my Valentine? 💕</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="hearts-bg"></div>
+
+    <div class="container">
+        <h1>Will you be my Date? 💕</h1>
+
+        <div class="gif-container">
+            <img id="cat-gif" src="https://media.tenor.com/EBV7OT7ACfwAAAAj/u-u-qua-qua-u-quaa.gif" alt="cute character">
+        </div>
+
+        <div class="buttons">
+            <button id="yes-btn" onclick="handleYesClick()">Yes</button>
+            <button id="no-btn" onclick="handleNoClick()">No</button>
+        </div>
+
+        <div id="date-plan" class="date-plan">
+            <h2>Pick our date plan 🍵🌙🍽️</h2>
+            <div class="plan-buttons">
+                <button class="plan-btn" onclick="selectPlan('Chai date')">Chai date</button>
+                <button class="plan-btn" onclick="selectPlan('Long walk')">Long walk</button>
+                <button class="plan-btn" onclick="selectPlan('Dinner date')">Dinner date</button>
+            </div>
+            <p id="plan-selection" class="plan-message">Choose one and I’ll start planning it 💌</p>
+        </div>
+
+        <div id="tease-toast"></div>
+    </div>
+
+    <audio id="bg-music" loop autoplay muted>
+        <source src="music/beabadoobee - Glue Song (Lyrics).mp3" type="audio/mpeg">
+    </audio>
+
+    <button id="music-toggle" onclick="toggleMusic()" title="Toggle music">🔊</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
