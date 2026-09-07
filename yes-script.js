@@ -19,9 +19,9 @@ window.addEventListener('load', () => {
     if (chosenPlan && planEl) {
         planEl.textContent = `Plan chosen: ${chosenPlan} — can’t wait to make it happen! ✨`
     }
-    if (chosenCaption && captionEl) {
-        captionEl.textContent = `Perfect! ${chosenCaption} For you, Debanjali 💖`
-    }
+    // if (chosenCaption && captionEl) {
+    //     captionEl.textContent = `Perfect! ${chosenCaption} For you, Upasana 💖`
+    // }
 })
 
 function launchConfetti() {
@@ -64,7 +64,7 @@ function launchConfetti() {
 
 function selectPlan(plan) {
     const message = document.getElementById('plan-selection')
-    message.textContent = `Perfect! ${plan} it is — can’t wait to spend time with you, Debanjali 💖`
+    message.textContent = `Perfect! ${plan} it is — can’t wait to spend time with you, Upasana 💖`
 
     document.querySelectorAll('.plan-btn').forEach(btn => {
         btn.classList.toggle('selected', btn.textContent === plan)

@@ -1,6 +1,6 @@
 const gifStages = [
     "https://media.tenor.com/EBV7OT7ACfwAAAAj/u-u-qua-qua-u-quaa.gif",    // 0 normal
-    "https://media1.tenor.com/m/uDugCXK4vI4AAAAd/chiikawa-hachiware.gif",  // 1 confused
+    "https://media.tenor.com/f_rkpJbH1s8AAAAj/somsom1012.gif",             // 1 confused fallback
     "https://media.tenor.com/f_rkpJbH1s8AAAAj/somsom1012.gif",             // 2 pleading
     "https://media.tenor.com/OGY9zdREsVAAAAAj/somsom1012.gif",             // 3 sad
     "https://media1.tenor.com/m/WGfra-Y_Ke0AAAAd/chiikawa-sad.gif",       // 4 sadder
@@ -44,11 +44,9 @@ const noBtn = document.getElementById('no-btn')
 const music = document.getElementById('bg-music')
 
 function updateYesButtonState() {
-    const selectedPlan = localStorage.getItem('selectedPlan')
-    const enabled = Boolean(selectedPlan)
-    yesBtn.disabled = !enabled
-    yesBtn.style.opacity = enabled ? '1' : '0.6'
-    yesBtn.style.cursor = enabled ? 'pointer' : 'not-allowed'
+    yesBtn.disabled = false
+    yesBtn.style.opacity = '1'
+    yesBtn.style.cursor = 'pointer'
 }
 
 // Initialize button state based on any previously chosen plan
@@ -84,7 +82,7 @@ function selectPlan(plan) {
     const captions = {
         'Chai date': 'Tumi amar cha pata, ami tomar dudh,\nEk cup cha aar ektu golpo — shondha ta hobe smooth.',
         'Long walk': 'Long walk bole berobo, kintu actually excuse tomar shathe beshi time katano.',
-        'Dinner date': 'Menu te onek kichu thakbe, kintu amar favourite dish holo ‘tumi’.'
+        'Dinner date': 'Menu te onek kichu thakbe, kintu amar favourite to‘tumi’.'
     }
 
     const caption = captions[plan] || ''
@@ -96,7 +94,7 @@ function selectPlan(plan) {
 
     const captionEl = document.getElementById('plan-caption')
     if (captionEl) {
-        captionEl.textContent = `Perfect! ${caption} For you, Debanjali 💖`
+        captionEl.textContent = `Perfect! ${caption} For you, Upasana 💖`
     }
 
     document.querySelectorAll('.plan-btn').forEach(btn => {
@@ -195,8 +193,8 @@ function runAway() {
     const margin = 20
     const btnW = noBtn.offsetWidth
     const btnH = noBtn.offsetHeight
-    const maxX = window.innerWidth - btnW - margin
-    const maxY = window.innerHeight - btnH - margin
+    const maxX = Math.max(margin, window.innerWidth - btnW - margin)
+    const maxY = Math.max(margin, window.innerHeight - btnH - margin)
 
     const randomX = Math.random() * maxX + margin / 2
     const randomY = Math.random() * maxY + margin / 2
